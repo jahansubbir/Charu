@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RailComponent } from './rail/rail.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'ldb',component:RailComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

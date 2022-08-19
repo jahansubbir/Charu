@@ -1,0 +1,61 @@
+<div class="shed alert-info">
+    <div class="row">
+        <div style="margin: max; text-align:center">
+            <label class="control-label">Rail Lag</label>
+        </div>
+    </div>
+</div>
+<div class="alert-success">
+    <div class="form-group">
+        <div class="row">
+<div class="col-sm-8">
+            <div classf="col-sm-2">
+                <input class="form-control" [(ngModel)]="containerNo" />
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-success" (click)="getRailLag(containerNo)">Search</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="root" class="data-div">
+    <div class="col-xs-2">
+        <label class="control-label">Filter:</label>
+    </div>
+    <div class="col-sm-2">
+    <input class="form-control" /></div>
+    <div>
+        
+        <table mat-table [dataSource]="root.object.containerFormList" class="demo-table">
+            <ng-container matColumnDef="containerNumber">
+                <th mat-header-cell *matHeaderCellDef>Container</th>
+                <td mat-cell *matCellDef="let element"> {{element.containerNumber}} </td>
+            </ng-container>
+            <ng-container matColumnDef="timeStamp">
+                <th mat-header-cell *matHeaderCellDef>Time Stamp</th>
+                <td mat-cell *matCellDef="let element"> {{element.trackingInfoList[0].timestampTimezone | date:'yy-MM-dd
+                    hh:mm' }} </td>
+            </ng-container>
+            <ng-container matColumnDef="currentLocation">
+                <th mat-header-cell *matHeaderCellDef>Current Location</th>
+                <td mat-cell *matCellDef="let element"> {{element.trackingInfoList[0].currentLocation }} </td>
+            </ng-container>
+            <ng-container matColumnDef="eventName">
+                <th mat-header-cell *matHeaderCellDef>Event</th>
+                <td mat-cell *matCellDef="let element"> {{element.trackingInfoList[0].eventName }} </td>
+            </ng-container>
+            <ng-container matColumnDef="transportMode">
+                <th mat-header-cell *matHeaderCellDef>Transport Mode</th>
+                <td mat-cell *matCellDef="let element"> {{element.transportMode }} </td>
+            </ng-container>
+            <ng-container matColumnDef="cycleName">
+                <th mat-header-cell *matHeaderCellDef>Export/Import</th>
+                <td mat-cell *matCellDef="let element"> {{element.cycleName }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
