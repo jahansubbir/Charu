@@ -36,11 +36,5 @@ export class RailComponent implements OnInit {
     }
   }
 
-  filter(str:string){
-    if(str.length>0){
-      
-    }else{
-
-    }
-  }
+  
 }
