@@ -9,11 +9,13 @@ import { MdBootstrapModule } from './md-bootstrap-module/md-bootstrap.module';
 import { RailComponent } from './rail/rail.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
+import { TableFilterPipe } from './table-filter.pipe';
 //import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
-    RailComponent
+    RailComponent,
+    TableFilterPipe
   ],
   imports: [
     BrowserModule,

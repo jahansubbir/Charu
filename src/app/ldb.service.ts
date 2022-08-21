@@ -25,7 +25,7 @@ export class LdbService {
   constructor(private httpClient:HttpClient) { }
 
   
-  getSingleContainer(containerNo: string[]): Observable<Root> {
+  getMultipleContainer(containerNo: string[]): Observable<Root> {
     var containerString=containerNo.join(",");
     var api = this.httpClient.
       get<Root>(`https://www.ldb.co.in/api/ldb/container/search?cntrNo=${containerString}&searchType=41`, httpOptions)

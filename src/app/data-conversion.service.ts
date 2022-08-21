@@ -13,7 +13,7 @@ export class DataConversionService {
   root?:Root;
 getContainerInfo(containerNos:string[]):ContainerInfo[]{
  var  containerInfo:ContainerInfo[]=[];
-  this.ldbService.getSingleContainer(containerNos).
+  this.ldbService.getMultipleContainer(containerNos).
   subscribe((data: Root) => this.root = data);
   if(this.root){
 for (let index = 0; index < this.root.object.containerFormList.length; index++) {
@@ -38,4 +38,6 @@ for (let index = 0; index < this.root.object.containerFormList.length; index++) 
 }
 return containerInfo;
 }
+
+
 }

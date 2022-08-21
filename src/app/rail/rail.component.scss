@@ -1,3 +1,4 @@
+
 .data-div{
   margin-top: 5%;
 }
@@ -6,7 +7,10 @@
     height: 960;
 }
 .demo-table {
+  
     width: 100%;
+    color: darkblue;
+    
   }
   
   .mat-column-demo-position {
@@ -19,6 +23,7 @@
   .mat-column-demo-name {
     padding-left: 16px;
     font-size: 20px;
+    color: darkblue;
   }
   
   .mat-column-demo-weight {

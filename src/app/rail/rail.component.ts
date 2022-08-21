@@ -17,15 +17,17 @@ export class RailComponent implements OnInit {
   containerInfos: ContainerInfo[] = [];
   containerNo: string = "";
   searchString?: string;
+  filterInput:string="";
+  tableHeaderClass="bg-info"
 
   ngOnInit(): void {
-    this.getRailLag("MRKU0439532,MSKU3148738");
+  //  this.getRailLag("MRKU0439532,MSKU3148738");
   }
   getRailLag(containerNo: string) {
     if (containerNo.length > 0) {
       var containerArray = containerNo.split(',');
 
-      this.ldbService.getSingleContainer(containerArray).
+      this.ldbService.getMultipleContainer(containerArray).
         subscribe((data: Root) => this.root = data);
       this.root?.object.containerFormList.forEach(container => {
 
@@ -34,4 +36,11 @@ export class RailComponent implements OnInit {
     }
   }
 
+  filter(str:string){
+    if(str.length>0){
+      
+    }else{
+
+    }
+  }
 }
